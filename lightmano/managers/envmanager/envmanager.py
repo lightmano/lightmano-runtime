@@ -19,11 +19,11 @@
 
 import uuid
 
-from mpm.core.service import EService
+from lightmano.core.service import EService
 
-from mpm.managers.envmanager.envhandler import EnvHandler
+from lightmano.managers.envmanager.envhandler import EnvHandler
 
-from mpm.managers.envmanager.env import Env
+from lightmano.managers.envmanager.env import Env
 
 
 class EnvManager(EService):

@@ -18,7 +18,7 @@
 """Account Class."""
 
 from pymodm import MongoModel, fields
-from mpm.core.serialize import serializable_dict
+from lightmano.core.serialize import serializable_dict
 
 
 @serializable_dict

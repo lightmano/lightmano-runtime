@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 #
-# Copyright (c) 2019 Roberto Riggio
+# Copyright (c) 2019 Giovanni Baggio
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -15,34 +15,20 @@
 # specific language governing permissions and limitations
 # under the License.
 
-"""Exposes a RESTful interface ."""
+"""VNF Stats."""
+
 
 import lightmano.managers.apimanager.apimanager as apimanager
 
 
 # pylint: disable=W0223
-class EnvHandler(apimanager.APIHandler):
-    """Access the system services."""
+class NodeStatsHandler(apimanager.APIHandler):
+    """Node statistics."""
 
-    URLS = [r"/api/v1/env/?"]
+    URLS = [r"/lightmano/v1/nodestats/?",
+            r"/lightmano/v1/nodestats/([a-z0-9-]*)"]
 
     @apimanager.validate(min_args=0, max_args=1)
-    def get(self, *args, **kwargs):
-        """Get environment
+    def get(self, node_name=None):
 
-        Example URLs:
-
-             GET /api/v1/env
-
-            {
-                "mpm.managers.envmanager.envmanager": {
-                    "name": "mpm.managers.envmanager.envmanager",
-                    "params": {
-                        "service_id": "b7d872a2-fee1-442e-b6d9-f33e5ce9fca1",
-                        "every": -1
-                    }
-                }
-            }
-        """
-
-        return self.service.env
+        return self.service.get_node_stats(node_name)

@@ -1,0 +1,38 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    run: -NAME-
+  name: -NAME-
+spec:
+  initContainers:
+  - name: index-writer
+    image: busybox
+    command: ['sh', '-c', 'echo -INDEX_CONTENT- >> /www/index.html']
+    volumeMounts:
+    - mountPath: /www
+      name: www-volume
+  containers:
+  - image: nginx
+    name: nginx
+    volumeMounts:
+    - mountPath: /usr/share/nginx/html
+      name: www-volume
+  volumes:
+  - name: www-volume
+    emptyDir: {}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: -SERVICENAME-
+  name: -SERVICENAME-
+spec:
+  ports:
+  - name: "-PORT-"
+    port: -PORT-
+    protocol: TCP
+    targetPort: -PORT-
+  selector:
+    run: -NAME-

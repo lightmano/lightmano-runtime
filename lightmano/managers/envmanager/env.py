@@ -23,10 +23,10 @@ import platform
 from importlib import import_module
 from pymodm import MongoModel, fields
 
-import mpm.core.serialize as serialize
+import lightmano.core.serialize as serialize
 
-from mpm.main import srv_or_die
-from mpm.core.serialize import serializable_dict
+from lightmano.main import srv_or_die
+from lightmano.core.serialize import serializable_dict
 
 
 @serializable_dict
