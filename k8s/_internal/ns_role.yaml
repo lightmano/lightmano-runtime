@@ -1,0 +1,22 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  creationTimestamp: null
+  name: lightmano-role
+rules:
+- apiGroups:
+  - ""
+  resources:
+  - '*'
+  verbs:
+  - list
+  - get
+  - create
+  - delete
+- apiGroups:
+  - "metrics.k8s.io"
+  resources:
+  - '*'
+  verbs:
+  - list
+  - get

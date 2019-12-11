@@ -19,9 +19,9 @@
 
 from pymodm import fields
 
-from mpm.managers.envmanager.env import Env
-from mpm.main import srv_or_die
-from mpm.core.serialize import serializable_dict
+from lightmano.managers.envmanager.env import Env
+from lightmano.main import srv_or_die
+from lightmano.core.serialize import serializable_dict
 
 
 @serializable_dict

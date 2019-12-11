@@ -17,9 +17,9 @@
 
 """Accounts manager."""
 
-from mpm.core.service import EService
-from mpm.managers.accountsmanager.account import Account
-from mpm.managers.accountsmanager.accountshandler import AccountsHandler
+from lightmano.core.service import EService
+from lightmano.managers.accountsmanager.account import Account
+from lightmano.managers.accountsmanager.accountshandler import AccountsHandler
 
 
 class AccountsManager(EService):

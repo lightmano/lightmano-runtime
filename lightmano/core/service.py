@@ -23,7 +23,7 @@ import logging
 
 import tornado.ioloop
 
-from mpm.core.serialize import serializable_dict
+from lightmano.core.serialize import serializable_dict
 
 
 @serializable_dict

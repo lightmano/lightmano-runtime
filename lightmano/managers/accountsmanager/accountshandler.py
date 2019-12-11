@@ -17,7 +17,7 @@
 
 """Exposes a RESTful interface ."""
 
-import mpm.managers.apimanager.apimanager as apimanager
+import lightmano.managers.apimanager.apimanager as apimanager
 
 
 # pylint: disable=W0223

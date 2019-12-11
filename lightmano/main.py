@@ -92,7 +92,7 @@ def _do_launch(managers, managers_order):
 def _setup_db(args):
     """ Setup db connection. """
 
-    runtime_config = args.config + "/mpm.cfg"
+    runtime_config = args.config + "/lightmano.cfg"
     config = configparser.ConfigParser()
     config.read(runtime_config)
 
@@ -128,7 +128,7 @@ def _post_startup():
 def _read_config(args):
     """Read config file."""
 
-    runtime_config = args.config + "/mpm.cfg"
+    runtime_config = args.config + "/lightmano.cfg"
     config = configparser.ConfigParser()
     config.read(runtime_config)
 

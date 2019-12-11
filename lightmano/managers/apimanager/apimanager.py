@@ -30,9 +30,9 @@ import tornado.httpserver
 from tornado.web import Application
 from pymodm.errors import ValidationError
 
-from mpm.core.serialize import serialize
-from mpm.core.service import EService
-from mpm.main import srv_or_die
+from lightmano.core.serialize import serialize
+from lightmano.core.service import EService
+from lightmano.main import srv_or_die
 
 DEBUG = True
 DEFAULT_PORT = 8888
@@ -56,8 +56,8 @@ def validate(returncode=200, min_args=0, max_args=0):
 
                 params = {}
 
-                if self.request.body and json.loads(self.request.body):
-                    params = json.loads(self.request.body)
+                if self.request.body and json.loads(self.request.body.decode('utf-8')):
+                    params = json.loads(self.request.body.decode('utf-8'))
 
                 if "version" in params:
                     del params["version"]
@@ -265,6 +265,8 @@ class APIHandler(tornado.web.RequestHandler):
         """Prepare to handler reply."""
 
         self.set_header('Content-Type', 'application/json')
+
+        return  # temporary solution
 
         # get requests do not require authentication
         if self.request.method == "GET":

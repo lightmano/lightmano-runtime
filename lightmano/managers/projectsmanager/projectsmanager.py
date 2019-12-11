@@ -17,12 +17,12 @@
 
 """Projects manager."""
 
-from mpm.main import srv_or_die
-from mpm.core.service import EService
+from lightmano.main import srv_or_die
+from lightmano.core.service import EService
 
-from mpm.managers.projectsmanager.project import Project
+from lightmano.managers.projectsmanager.project import Project
 
-from mpm.managers.projectsmanager.projectshandler import ProjectsHandler
+from lightmano.managers.projectsmanager.projectshandler import ProjectsHandler
 
 
 class ProjectsManager(EService):
